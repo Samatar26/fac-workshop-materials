@@ -8,6 +8,30 @@
     <link rel="stylesheet" href='/assets/default.css'>
   </head>
   <body>
-    <h1>Hello.....</h1>
+    <h1 id="header">Hello.....</h1>
+    <video id="videoTag" src=""></video>
   </body>
+  <script src="/assets/comms.js"></script>
+  <script src="/assets/caller.js"></script>
+  <script src="/assets/driver.js"></script>
+  <script>
+    var constraints = {
+      video: true,
+      audio: true
+    }
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then(res => {
+      var video = document.getElementById('videoTag')
+      video.srcObject = res;
+      video.onloadedmetadata = (e) => {
+        video.play();
+      };
+    })
+    .catch(err => {
+      var header = document.getElementById('header');
+      header.innerHTML = "There was a problem spying on you...";
+      console.log(err);
+    })
+
+  </script>
 </head>
