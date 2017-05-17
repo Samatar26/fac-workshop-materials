@@ -11,7 +11,6 @@ const EndPoint =
   class EndPoint {
     constructor(ep_name) {
       this._name = ep_name;
-      console.log('this >>>', this);
       EndPoint.directories[ep_name] = this;
     }
     /** @method log

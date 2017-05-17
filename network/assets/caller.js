@@ -144,7 +144,7 @@ const VideoEndPoint = (function() {
      *   as out local description and send the offer to the remote EndPoint ('OFFER').
      */
     callAccepted(from) {
-      if (this._state == 'RINGING' && this._party==from) {
+      if (this._state == 'DIALING' && this._party==from) {
         this.log("CALL ACCEPTED: "+from);
         if (this._ringTimer!=null) {
           // Cancel any remaining timeout
@@ -182,7 +182,7 @@ const VideoEndPoint = (function() {
      *  implementation the only reason we decline a call is if we are already on another call.
      */
     callDenied(from) {
-      if (this._state=='RINGING' && this._party==from) {
+      if (this._state=='DIALING' && this._party==from) {
         this.log("CALL DENIED: "+from);
         alert("Can't call "+from+", the line is busy or the target address is offline/doesn't exist...");
         this.setState('IDLE');
@@ -301,7 +301,7 @@ const VideoEndPoint = (function() {
      */
     startCall(target) {
       if (this._state=='IDLE') {
-        this.setState('RINGING');
+        this.setState('DIALING');
         this._party = target;
         this.send(target, 'CALL_REQUEST');
 

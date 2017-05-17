@@ -8,9 +8,92 @@
     <link rel="stylesheet" href='/assets/default.css'>
   </head>
   <body>
-    <h1>Hello.....</h1>
+    <h1 id="header">Hello.....</h1>
+    <!-- <video id="videoTag" src=""></video> -->
+    <div class="container">
+
+      <div class="row">
+
+        <div id="v1" class="col-xs-12 col-sm-6 userEndPoint">
+          <h2>User:
+            <span class="userName">User1</span>
+            <span class="state"></span>
+          </h2>
+          <div class="controls">
+            <input class="targetName" type="text" placeholder="Who you gonna call?">
+            <button class="callButton">Call</button>
+            <button class="hangupButton">Hangup</button>
+          </div>
+          <video class="remoteVideo" src=""></video>
+          <video class="localVideo" src=""></video>
+        </div>
+
+        <div id="v2" class="col-xs-12 col-sm-6 userEndPoint">
+          <h2>User:
+            <span class="userName">User2</span>
+            <span class="state"></span>
+          </h2>
+          <div class="controls">
+            <input class="targetName" type="text" placeholder="Who you gonna call?">
+            <button class="callButton">Call</button>
+            <button class="hangupButton">Hangup</button>
+          </div>
+          <video class="remoteVideo" src=""></video>
+          <video class="localVideo" src=""></video>
+        </div>
+
+        <div id="v3" class="col-xs-12 col-sm-6 userEndPoint">
+          <h2>User:
+            <span class="userName">User3</span>
+            <span class="state"></span>
+          </h2>
+          <div class="controls">
+            <input class="targetName" type="text" placeholder="Who you gonna call?">
+            <button class="callButton">Call</button>
+            <button class="hangupButton">Hangup</button>
+          </div>
+          <video class="remoteVideo" src=""></video>
+          <video class="localVideo" src=""></video>
+        </div>
+
+        <div id="v4" class="col-xs-12 col-sm-6 userEndPoint">
+          <h2>User:
+            <span class="userName">User4</span>
+            <span class="state"></span>
+          </h2>
+          <div class="controls">
+            <input class="targetName" type="text" placeholder="Who you gonna call?">
+            <button class="callButton">Call</button>
+            <button class="hangupButton">Hangup</button>
+          </div>
+          <video class="remoteVideo" src=""></video>
+          <video class="localVideo" src=""></video>
+        </div>
+
+      </div>
+    </div>
   </body>
   <script src="/assets/comms.js"></script>
   <script src="/assets/caller.js"></script>
   <script src="/assets/driver.js"></script>
+  <!-- <script>
+    var constraints = {
+      video: true,
+      audio: true
+    }
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then(res => {
+      var video = document.getElementById('videoTag')
+      video.srcObject = res;
+      video.onloadedmetadata = (e) => {
+        video.play();
+      };
+    })
+    .catch(err => {
+      var header = document.getElementById('header');
+      header.innerHTML = "There was a problem spying on you...";
+      console.log(err);
+    })
+
+  </script> -->
 </head>
