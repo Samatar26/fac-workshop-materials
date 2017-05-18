@@ -4,7 +4,6 @@
     // debugger;
     // Application logic here
     function getTags(name, tagName){
-      console.log(tagName);
       return document.querySelector(`#${name} .${tagName}`);
     }
 
@@ -25,8 +24,6 @@
         // extract user endPoint value
         var target = document.querySelector(`#${caller.id} .targetName`).value;
         var sender = caller.id;
-
-        console.log('user' + target + 'called');
 
         // debugger;
         if(!target) return;
